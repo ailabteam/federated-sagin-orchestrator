@@ -73,13 +73,13 @@ function App() {
           return prev;
         }
       });
-    }, 200); // Tốc độ vẽ: 0.2 giây/điểm -> 20 giây cho 100 vòng
+    }, 200);
     return () => { if (displayIntervalRef.current) clearInterval(displayIntervalRef.current); };
   }, [status, fullHistory]);
   
   const getButtonText = () => {
     switch (status) {
-      case 'running': return `Waiting for Backend...`;
+      case 'running': return `Waiting for Backend... (Simulating ~20s)`;
       case 'displaying': return `Visualizing... (Round ${currentRound}/${totalRounds})`;
       case 'finished': return 'Start Again';
       case 'failed': return 'Retry Training';
@@ -120,11 +120,13 @@ function App() {
             <div className="chart-wrapper">
               <AccuracyChart history={displayedHistory} />
             </div>
-            {status === 'finished' && <div className="overlay-text">Simulation Complete! Final Accuracy: {((fullHistory.at(-1)?.accuracy ?? 0) * 100).toFixed(2)}%</div>}
+            {/* === SỬA LỖI CÚ PHÁP Ở ĐÂY === */}
+            {status === 'finished' && <div className="overlay-text">Simulation Complete! Final Accuracy: {((fullHistory[fullHistory.length - 1]?.accuracy ?? 0) * 100).toFixed(2)}%</div>}
             {status === 'failed' && <div className="overlay-text error-text">Simulation Failed!</div>}
           </div>
         </main>
       </div>
   );
 }
+
 export default App;
