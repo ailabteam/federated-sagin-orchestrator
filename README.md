@@ -27,9 +27,8 @@ The core objective is to demonstrate how a powerful, generalized AI model can be
 
 A detailed walkthrough of the dashboard, the Federated Learning concept, and the underlying system architecture is available on YouTube.
 
-[![YouTube Demo Video Thumbnail](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![YouTube Demo Video Thumbnail](https://img.youtube.com/vi/vhUEbGM_goQ/0.jpg)](https://www.youtube.com/watch?v=vhUEbGM_goQ)
 
-> **Note:** Please replace `YOUTUBE_VIDEO_ID_HERE` with the actual ID of your YouTube video.
 
 ---
 
