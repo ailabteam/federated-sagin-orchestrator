@@ -24,14 +24,13 @@ function App() {
   const [status, setStatus] = useState<TrainingStatus>({ 
     status: 'idle', 
     current_round: 0, 
-    total_rounds: 100, // Giá trị mặc định ban đầu
+    total_rounds: 100, 
     history: [], 
     error_message: null 
   });
   
   const [activeClients, setActiveClients] = useState<number[]>([]);
 
-  // Hook để lấy status theo chu kỳ khi đang training
   useEffect(() => {
     if (status.status !== 'running') {
       setActiveClients([]);
@@ -126,7 +125,8 @@ function App() {
           <div className="chart-wrapper">
             <AccuracyChart history={status.history} />
           </div>
-          {status.status === 'finished' && <div className="overlay-text">Training Complete! Final Accuracy: {(status.history.at(-1)?.accuracy ?? 0) * 100:.2f}%</div>}
+          {/* === SỬA LỖI CÚ PHÁP Ở ĐÂY === */}
+          {status.status === 'finished' && <div className="overlay-text">Training Complete! Final Accuracy: {((status.history.at(-1)?.accuracy ?? 0) * 100).toFixed(2)}%</div>}
           {status.status === 'failed' && <div className="overlay-text error-text">Training Failed!</div>}
         </div>
       </main>
