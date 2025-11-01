@@ -16,3 +16,45 @@ body { font-family: sans-serif; margin: 0; background-color: #f0f2f5; }
 
 .overlay-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; font-weight: bold; color: #28a745; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; }
 .error-text { color: #dc3545; }
+/* src/App.css */
+
+/* ... (CSS cũ giữ nguyên) ... */
+
+.app-main-split { 
+  display: flex; 
+  flex-grow: 1; 
+  overflow: hidden; /* Quan trọng */
+}
+
+/* THÊM CÁC CLASS MỚI NÀY */
+.side-panel {
+  flex-basis: 300px; /* Độ rộng cột giải thích */
+  flex-shrink: 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.explanation-box { /* Style cho khối giải thích */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+/* ... */
+
+.panel { padding: 1rem; display: flex; flex-direction: column; position: relative; }
+.panel h2 { margin-top: 0; text-align: center; color: #333; }
+
+/* Thay đổi ở đây */
+.network-panel { 
+  flex-basis: 50%; /* Cột giữa */
+  border-right: 1px solid #ddd; 
+} 
+.chart-panel { 
+  flex-basis: 50%; /* Cột phải */
+}
+/* ... */
