@@ -126,7 +126,7 @@ function App() {
             <AccuracyChart history={status.history} />
           </div>
           {/* === SỬA LỖI CÚ PHÁP Ở ĐÂY === */}
-          {status.status === 'finished' && <div className="overlay-text">Training Complete! Final Accuracy: {((status.history.at(-1)?.accuracy ?? 0) * 100).toFixed(2)}%</div>}
+          {status.status === 'finished' && <div className="overlay-text">Training Complete! Final Accuracy: {((status.history[status.history.length - 1]?.accuracy ?? 0) * 100).toFixed(2)}%</div>}
           {status.status === 'failed' && <div className="overlay-text error-text">Training Failed!</div>}
         </div>
       </main>
