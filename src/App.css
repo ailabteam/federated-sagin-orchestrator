@@ -58,3 +58,43 @@ body { font-family: sans-serif; margin: 0; background-color: #f0f2f5; }
   flex-basis: 50%; /* Cột phải */
 }
 /* ... */
+/* Thêm vào cuối file src/App.css */
+
+.chart-wrapper {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Cần thiết để định vị placeholder */
+}
+
+.chart-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Hiệu ứng spinner loading */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
